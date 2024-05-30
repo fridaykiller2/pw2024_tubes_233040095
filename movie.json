@@ -1,0 +1,76 @@
+[
+  {
+    "nama": "ant-man-wasp",
+    "imdb": 9.3,
+    "date": "2022",
+    "sposter": "img/movie1.jpg",
+    "bposter": "img/movie2.jpg",
+    "genre": "action",
+    "type": "series",
+    "url": "ant-man-wasp.html",
+    "trailer": "ant-man-wasp trailer.mp4",
+    "low": "video/ant-man-wasp 480ph.mp4",
+    "medium": "",
+    "high": "video/ant-man-wasp 1080ph.mp4"
+  },
+
+  {
+    "nama": "ant-man-wasp",
+    "imdb": 9.3,
+    "date": "2022",
+    "sposter": "img/movie1.jpg",
+    "bposter": "img/movie2.jpg",
+    "genre": "action",
+    "type": "series",
+    "url": "ant-man-wasp.html",
+    "trailer": "ant-man-wasp trailer.mp4",
+    "low": "video/ant-man-wasp 480ph.mp4",
+    "medium": "",
+    "high": "video/ant-man-wasp 1080ph.mp4"
+  },
+
+  {
+    "nama": "ant-man-wasp",
+    "imdb": 9.3,
+    "date": "2022",
+    "sposter": "img/movie1.jpg",
+    "bposter": "img/movie2.jpg",
+    "genre": "action",
+    "type": "series",
+    "url": "ant-man-wasp.html",
+    "trailer": "ant-man-wasp trailer.mp4",
+    "low": "video/ant-man-wasp 480ph.mp4",
+    "medium": "",
+    "high": "video/ant-man-wasp 1080ph.mp4"
+  },
+
+  {
+    "nama": "ant-man-wasp",
+    "imdb": 9.3,
+    "date": "2022",
+    "sposter": "img/movie1.jpg",
+    "bposter": "img/movie2.jpg",
+    "genre": "action",
+    "type": "series",
+    "url": "ant-man-wasp.html",
+    "trailer": "ant-man-wasp trailer.mp4",
+    "low": "video/ant-man-wasp 480ph.mp4",
+    "medium": "",
+    "high": "video/ant-man-wasp 1080ph.mp4"
+  },
+
+  {
+    "nama": "ant-man-wasp",
+    "imdb": 9.3,
+    "date": "2022",
+    "sposter": "img/movie1.jpg",
+    "bposter": "img/movie2.jpg",
+    "genre": "action",
+    "type": "series",
+    "url": "ant-man-wasp.html",
+    "trailer": "ant-man-wasp trailer.mp4",
+    "low": "video/ant-man-wasp 480ph.mp4",
+    "medium": "",
+    "high": "video/ant-man-wasp 1080ph.mp4"
+  }
+]
