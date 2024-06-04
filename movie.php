@@ -1,10 +1,7 @@
 <?php
 session_start();
-
-include("config.php");
-if(!isset($_SESSION['valid'])) {
-  header("Location: movie.php");
-}
+require "../functions/functions.php";
+$movies = query("SELECT * FROM movies");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,16 +47,18 @@ if(!isset($_SESSION['valid'])) {
           <img src="img/user.jpg" alt="" />
           <a href="logout.php"> <button class="btn">log out</button></a>
           <div class="search">
+            <?php if(isset($_SESSION['search'])) : ?>
             <a href="#" class="card">
               <img src="img/ant-man-wasp1.jpg" alt="" />
               <div class="cont">
                 <h3>ant-man-wasp</h3>
                 <p>
                   Action, 2015, <span>IMDB</span
-                  ><i class="bi bi-star-fill"></i> 9.6
+                  ><i class="bi bi-star-fill"></i> 9.8
                 </p>
               </div>
             </a>
+            <?php endif ; ?>
           </div>
         </div>
       </nav>
@@ -92,22 +91,26 @@ if(!isset($_SESSION['valid'])) {
         <i class="bi bi-chevron-left"></i>
         <i class="bi bi-chevron-right"></i>
         <div class="cards">
-          <!--  <a href="#" class="card">
-            <img src="img/movie1.jpg" alt="" class="poster" />
-            <div class="rest_card">
-              <img src="img/movie2.jpg" alt="" />
-              <div class="cont">
-                <h4>ant-man-wasp</h4>
-                <div class="sub">
-                  <p>Action, 2022</p>
-                  <h3><span>IMDB</span><i class="bi bi-star-fill"></i> 9.8</h3>
+          <?php foreach($movies as $mv) : ?>
+           <a href="#" class="card">
+              <img src="img/<?= $mv["poster 1"] ?>" alt="" class="poster" />
+              <div class="rest_card">
+                <img src="img/<?= $mv["poster 2"] ?>" alt="" />
+                <div class="cont">
+                  <h4><?= $mv["title"] ?></h4>
+                  <div class="sub">
+                    <p>Action, <?= $mv["tahun_rilis"] ?></p>
+                    <h3><span>IMDB</span><i class="bi bi-star-fill"></i><?= $mv["rating"] ?></h3>
+                  </div>
                 </div>
-              </div>
-            </div> 
-          </a> -->
+              </div> 
+            </a> 
+            <?php endforeach ; ?>
         </div>
       </section>
     </header>
     <script src="movie/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   </body>
 </html>

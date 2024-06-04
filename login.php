@@ -14,7 +14,7 @@ session_start();
       <div class="box form-box">
         <?php
 
-        include("config.php");
+        include("../config.php");
         if(isset($_POST['submit'])){
           $username = mysqli_real_escape_string($conn,$_POST['username']);
           $password = mysqli_real_escape_string($conn,$_POST['password']);

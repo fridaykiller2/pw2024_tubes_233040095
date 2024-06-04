@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="admin/admin.css">
-    <link rel="stylesheet" href="dasboard/css/all.min.css">
+    <link rel="stylesheet" href="../admin/admin.css">
+    <link rel="stylesheet" href="../dasboard/css/all.min.css">
 
     <title>Hello, world!</title>
   </head>
@@ -37,13 +37,13 @@
                   <a class="nav-link active text-white" href="dasboard.html"><i class="fa-solid fa-gauge mr-2"></i> Dashboard</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">movie</a><hr class="bg-secondary">
+                  <a class="nav-link text-white" href="#">Movie</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link  text-white" href="#">actors</a><hr class="bg-secondary">
+                  <a class="nav-link  text-white" href="#">user</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">genre</a><hr class="bg-secondary">
+                  <a class="nav-link text-white" href="#">Genre</a><hr class="bg-secondary">
                 </li>
                
               </ul>
@@ -56,9 +56,9 @@
                         <div class="card-body-icon">
                             <i class="fas fa-user-graduate mr-2"></i>
                         </div>
-                      <h5 class="card-title">Card title</h5>
-                      <div class="display-4">1.200</div>
-                      <a href="#"><p class="card-text text-white">hahahahahah <i class="fas fa-angle-double-right ml-2"></i></p></a>
+                      <h5 class="card-title">Movie</h5>
+                      <div class="display-4"></div>
+                      <a href="#"><p class="card-text text-white">detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
                     </div>
                   </div>
                 <div class="card bg-success ml-5" style="width: 18rem;">
@@ -66,9 +66,9 @@
                         <div class="card-body-icon">
                             <i class="fas fa-user-graduate mr-2"></i>
                         </div>
-                      <h5 class="card-title">Card title</h5>
-                      <div class="display-4">1.200</div>
-                      <a href="#"><p class="card-text text-white">hahahahahah <i class="fas fa-angle-double-right ml-2"></i></p></a>
+                      <h5 class="card-title">User</h5>
+                      <div class="display-4"></div>
+                      <a href="#"><p class="card-text text-white">detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
                     </div>
                   </div>
                 <div class="card bg-danger  ml-5" style="width: 18rem;">
@@ -76,9 +76,9 @@
                         <div class="card-body-icon">
                             <i class="fas fa-user-graduate mr-2"></i>
                         </div>
-                      <h5 class="card-title">Card title</h5>
-                      <div class="display-4">1.200</div>
-                      <a href="#"><p class="card-text text-white">hahahahahah <i class="fas fa-angle-double-right ml-2"></i></p></a>
+                      <h5 class="card-title">Genre</h5>
+                      <div class="display-4"></div>
+                      <a href="#"><p class="card-text text-white">detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
                     </div>
                   </div>
             </div>
