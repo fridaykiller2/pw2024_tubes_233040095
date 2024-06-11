@@ -12,7 +12,7 @@
 
       <?php
 
-      include("../config.php");
+      include("config.php");
       if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $username = $_POST['username'];
@@ -85,7 +85,7 @@
             />
           </div>
           <div class="links">
-            Already a member? <a href="../login.php">Sing in</a>
+            Already a member? <a href="login.php">Sing in</a>
           </div>
         </form>
       </div>

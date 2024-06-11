@@ -49,13 +49,13 @@ if(isset($_POST['ubah'])) {
         <div class="col-md-2 bg-dark mt-2 pr-3 pt-4">
             <ul class="nav flex-column ml-3 mb-5">
                 <li class="nav-item">
-                  <a class="nav-link active text-white" href="dasboard.html"><i class="fa-solid fa-gauge mr-2"></i> Dashboard</a><hr class="bg-secondary">
+                  <a class="nav-link active text-white" href="dashboard.php"><i class="fa-solid fa-gauge mr-2"></i> Dashboard</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Movie</a><hr class="bg-secondary">
+                  <a class="nav-link text-white" href="dashboard_movies.php">Movie</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link  text-white" href="#">user</a><hr class="bg-secondary">
+                  <a class="nav-link  text-white" href="users.php">user</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#">Genre</a><hr class="bg-secondary">

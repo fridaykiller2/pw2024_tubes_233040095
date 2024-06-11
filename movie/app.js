@@ -1,11 +1,33 @@
-let left_btn = document.getElementsByClassName('bi-chevron-left')[0];
-let right_btn = document.getElementsByClassName('bi-chevron-right')[0];
-let cards = document.getElementsByClassName('cards')[0];
+// ambil elemen2 yang dibutuhkan
+var keyword = document.getElementById("keyword");
+var search = document.getElementById("search");
+var search_user = document.getElementById("search_user");
 
-left_btn.addEventListener('click', () => {
+//tambahkan event ketika keyword ditulis
+keyword.addEventListener("keyup", function () {
+  // buat object ajax
+  var xhr = new XMLHttpRequest();
+
+  // cek kesiapan ajax
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+    }
+  };
+
+  // eksekusi ajax
+  xhr.open("GET", "ajax/coba.text", true);
+  xhr.send();
+});
+
+let left_btn = document.getElementsByClassName("bi-chevron-left")[0];
+let right_btn = document.getElementsByClassName("bi-chevron-right")[0];
+let cards = document.getElementsByClassName("cards")[0];
+
+left_btn.addEventListener("click", () => {
   cards.scrollLeft -= 140;
 });
-right_btn.addEventListener('click', () => {
+right_btn.addEventListener("click", () => {
   cards.scrollLeft += 140;
 });
 
@@ -17,27 +39,14 @@ fetch(json_url)
     data.forEach((ele, i) => {
       let { nama, imdb, date, sposter, bposter, genre, url } = ele;
       let card = document.createElement("a");
-      card.classList.add('card');
+      card.classList.add("card");
       card.href = url;
-      card.innerHTML = '
-      <img src="${sposter}" alt="${nama}" class="poster">
-      <div class="rest_card">
-        <img src="${bposter}" alt="" />
-        <div class="cont">
-          <h4>${nama}</h4>
-          <div class="sub">
-            <p>${genre}, ${date}</p>
-            <h3><span>IMDB</span><i class="bi bi-star-fill"></i> ${imdb}</h3>
-          </div>
-        </div>
-      </div>
-      '
-      cards.appendChild(card);
+      card.innerHTML = cards.appendChild(card);
     });
 
-    document.getElementById('title').innerText = date[0].nama;
-    document.getElementById('gen').innerText = date[0].genre;
-    document.getElementById('date').innerText = date[0].date;
-    document.getElementById('rate').innerHTML = '<span>IMDB</span><i class="bi bi-star-fill"></i> ${date[0].imdb}'
-
+    document.getElementById("title").innerText = date[0].nama;
+    document.getElementById("gen").innerText = date[0].genre;
+    document.getElementById("date").innerText = date[0].date;
+    document.getElementById("rate").innerHTML =
+      '<span>IMDB</span><i class="bi bi-star-fill"></i> ${date[0].imdb}';
   });

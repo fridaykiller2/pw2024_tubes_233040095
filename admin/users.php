@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../functions/functions.php";
-$movies = query("SELECT * FROM movies");
+$users = query("SELECT * FROM users");
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,40 +55,33 @@ $movies = query("SELECT * FROM movies");
         </div>
         <div class="col-md-10 p-5 pt-5">
         <div class="container">
-        <h1>Daftar Movies</h1>
-        <a href="tambah_movies.php" class="btn btn-primary">tambah data Movies </a>
+        <h1>Daftar usres</h1>
+        <a href="tambah_users.php" class="btn btn-primary">tambah data users </a>
 
         <table class="table">
     <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">title</th>
-        <th scope="col">description</th>
-        <th scope="col">tahun rilis</th>
-        <th scope="col">genre</th>
-        <th scope="col">trailer</th>
-        <th scope="col">poster 1</th>
-        <th scope="col">poster 2</th>
+        <th scope="col">username</th>
+        <th scope="col">password</th>
+        <th scope="col">role</th>
         <th scope="col"></th>
+
         </tr>
     </thead>
     <tbody>
     <?php 
     $i = 1; 
     ?>
-    <?php foreach ($movies as $mv): ?>
+    <?php foreach ($users as $user): ?>
     <tr>
       <th scope="row"><?= $i++ ?></th>
-      <td><?= $mv['title']; ?></td>
-      <td><?= $mv['description']; ?></td>
-      <td><?= $mv['tahun_rilis']; ?></td>
-      <td><?= $mv['genre_id']; ?></td>
-      <td><?= $mv['trailer_url']; ?></td>
-      <td><img src="../img/<?= $mv["poster 1"] ?>" alt="" width="100"></td>
-      <td><img src="../img/<?= $mv["poster 2"] ?>" alt="" width="100"</td>
-      <td>
-        <a href="ubah_movies.php?id=<?= $mv ['id']; ?>" class="badge text-bg-warning text-decoration-none">ubah</a>
-        <a href="hapus_movies.php?id=<?= $mv ['id']; ?>" onclick="return confirm('yakin?');" class="badge text-bg-danger text-decoration-none">hapus</a>
+      <td><?= $user['username']; ?></td>
+      <td><?= $user['password']; ?></td>
+      <td><?= $user['role']; ?></td>
+      <th scope="col"></th>
+        <a href="ubah_users.php?id=<?= $user ['id']; ?>" class="badge text-bg-warning text-decoration-none">ubah</a>
+        <a href="hapus_users.php?id=<?= $user ['id']; ?>" onclick="return confirm('yakin?');" class="badge text-bg-danger text-decoration-none">hapus</a>
 
       </td>  
     </tr>

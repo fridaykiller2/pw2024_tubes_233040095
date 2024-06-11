@@ -27,9 +27,10 @@ if(isset($_POST['tambah'])) {
     <h1>Tambah Data Movies</h1>
 
     <form action="" method="POST">
-        <div class="mb-3">
+    <input type="hidden" name="id" value="<?= $id; ?>" >
+    <div class="mb-3">
             <tabel for="nama" class="form-tabel">title</tabel>
-            <input type="text" class="form-control" id="nama" Name="nama" value="<?= $mv['title']; ?> required">
+            <input type="text" class="form-control" id="nama" Name="nama" value="<?= $mv['title']; ?>" required>
         </div>
         <div class="mb-3">
             <tabel for="nim" class="form-tabel">description</tabel>  

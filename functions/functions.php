@@ -32,10 +32,10 @@ function tambah($data)
   $description = htmlspecialchars ($data['description']);
   $tahun_rilis = htmlspecialchars ($data['tahun_rilis']);
   $genre = htmlspecialchars ($data['genre_id']);
-  $trailer = htmlspecialchars ($data['trailer_url']);
+  $rating = htmlspecialchars ($data['rating']);
 
   $query = "INSERT INTO movies 
-  VALUES (null, '$title', '$description', '$tahun_rilis', '$genre', '$trailer')
+  VALUES (null, '$title', '$description', '$tahun_rilis', '$genre', '$rating')
   ";
 
   mysqli_query($conn, $query) or die(mysqli_error($conn)); 
@@ -47,7 +47,7 @@ function hapus($id)
 
 {
   $conn = koneksi();
-  mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id");
+  mysqli_query($conn, "DELETE FROM movies WHERE id = $id");
   return mysqli_affected_rows($conn);
 }
 
@@ -56,22 +56,34 @@ function ubah($data)
   $conn = koneksi();
 
   $id = htmlspecialchars ($data ['id']);
-  $tite = htmlspecialchars ($data ['title']);
+  $title = htmlspecialchars ($data ['title']);
   $description = htmlspecialchars ($data ['description']);
   $tahun_rilis = htmlspecialchars ($data ['tahun_rilis']);
   $genre = htmlspecialchars ($data ['genre_id']);
-  $trailer = htmlspecialchars ($data ['trailer_url']);
+  $rating = htmlspecialchars ($data ['rating']);
 
-  $query = "UPDATE mahasiswa SET
+  $query = "UPDATE movies SET
   title = '$title', 
   description = '$description', 
   tahun_rilis = '$tahun_rilis', 
   genre_id = '$genre'
-  trailer_url = '$trailer'
-  WHERE id = $id";
+  rating = '$rating'
+  WHERE id = '$id";
 
   mysqli_query($conn, $query) or die(mysqli_error($conn)); 
   return mysqli_affected_rows($conn);
+}
+function registrasi($data) {
+    global $con;
+
+    $username = htmlspecialchars(ucwords(stripslashes($data["username"])));
+    $password1 = htmlspecialchars(mysqli_real_escape_string($con, $data["password1"]));
+
+    $password1 = password_hash($password1, PASSWORD_DEFAULT);
+
+    mysqli_query($con, "INSERT INTO user(username, password) VALUES ('$username', '$password1')");
+
+    return mysqli_affected_rows($con);
 }
 
 

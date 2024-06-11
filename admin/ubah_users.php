@@ -1,7 +1,17 @@
 <?php
-session_start();
-require "../functions/functions.php";
-$movies = query("SELECT * FROM movies");
+require '../functions/functions.php';
+
+$id = $_GET['id'];
+$users = query("SELECT * FROM users WHERE id = $id")[0];
+if(isset($_POST['ubah'])) {
+  if(ubah($_POST) > 0){
+ echo "<script>
+        alert('data berhasil diubah!');
+        document.location.href = '../movie.php';
+      </script>";
+  }
+
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,50 +64,27 @@ $movies = query("SELECT * FROM movies");
               </ul>
         </div>
         <div class="col-md-10 p-5 pt-5">
-        <div class="container">
-        <h1>Daftar Movies</h1>
-        <a href="tambah_movies.php" class="btn btn-primary">tambah data Movies </a>
+        <div class="container col-9 ">
+    <h1>Ubah Data users</h1>
 
-        <table class="table">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">title</th>
-        <th scope="col">description</th>
-        <th scope="col">tahun rilis</th>
-        <th scope="col">genre</th>
-        <th scope="col">trailer</th>
-        <th scope="col">poster 1</th>
-        <th scope="col">poster 2</th>
-        <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php 
-    $i = 1; 
-    ?>
-    <?php foreach ($movies as $mv): ?>
-    <tr>
-      <th scope="row"><?= $i++ ?></th>
-      <td><?= $mv['title']; ?></td>
-      <td><?= $mv['description']; ?></td>
-      <td><?= $mv['tahun_rilis']; ?></td>
-      <td><?= $mv['genre_id']; ?></td>
-      <td><?= $mv['trailer_url']; ?></td>
-      <td><img src="../img/<?= $mv["poster 1"] ?>" alt="" width="100"></td>
-      <td><img src="../img/<?= $mv["poster 2"] ?>" alt="" width="100"</td>
-      <td>
-        <a href="ubah_movies.php?id=<?= $mv ['id']; ?>" class="badge text-bg-warning text-decoration-none">ubah</a>
-        <a href="hapus_movies.php?id=<?= $mv ['id']; ?>" onclick="return confirm('yakin?');" class="badge text-bg-danger text-decoration-none">hapus</a>
-
-      </td>  
-    </tr>
-    <?php endforeach; ?>
-    </tbody>
-
-    </table>
-
+    <form action="" method="POST">
+        <input type="hidden" name="id" value="<?= $id; ?>" >
+        <div class="mb-3">
+            <tabel for="nama" class="form-tabel">username</tabel>
+            <input type="text" class="form-control" id="nama" Name="nama" value="<?= $user['username']; ?>" required>
         </div>
+        <div class="mb-3">
+            <tabel for="nim" class="form-tabel">password</tabel>  
+            <input type="text" class="form-control" id="nama" Name="nim" value="<?= $user['password']; ?>">
+        </div>
+        <div class="mb-3">
+            <tabel for="email" class="form-tabel">role</tabel>
+            <input type="text" class="form-control" id="nama" Name="email" value="<?= $user['role']; ?>">
+        </div>
+        <button type="submit" name="ubah" class="btn btn-primary">ubah Data</button>
+    </form>
+
+    </div>
         </div>
       </div>
 
